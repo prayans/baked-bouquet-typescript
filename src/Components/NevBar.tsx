@@ -1,22 +1,14 @@
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Divider from "@material-ui/core/Divider";
-import Drawer from "@material-ui/core/Drawer";
 import Hidden from "@material-ui/core/Hidden";
 import IconButton from "@material-ui/core/IconButton";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
 import MenuIcon from "@material-ui/icons/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
-import StoreIcon from "@material-ui/icons/Store";
-import CardGiftcardIcon from "@material-ui/icons/CardGiftcard";
-import InfoIcon from "@material-ui/icons/Info";
 import { ProminentAppBar } from "./AppBar";
+import { Segment } from "./Drawer";
+import Drawer from "@material-ui/core/Drawer";
 import "./AppBar.css";
 
 import {
@@ -57,42 +49,6 @@ export const NevBar: React.FC = () => {
     setMobileOpen(!mobileOpen);
   };
 
-  const drawer = (
-    <div>
-      <Link className="toolbar__logo" href="/">
-        <img
-          src="https://bakedbouquet.mithyalabs.com/img/logo-big.png"
-          alt="The LOGO"
-          width="143"
-          height="80"
-        ></img>
-      </Link>
-      <div className={classes.toolbar} />
-      <Divider />
-      <List>
-        {["Shop Collection", "Mothers's Day", "Shop Occassion"].map(
-          (text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <StoreIcon /> : <CardGiftcardIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          )
-        )}
-      </List>
-      <Divider />
-      <List>
-        {["Events", "About Us", "Blog", "Franchies"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index == 1 ? <InfoIcon /> : undefined}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-    </div>
-  );
-
   return (
     <div>
       <CssBaseline />
@@ -124,7 +80,7 @@ export const NevBar: React.FC = () => {
               keepMounted: true,
             }}
           >
-            {drawer}
+            <Segment />
           </Drawer>
         </Hidden>
       </nav>
