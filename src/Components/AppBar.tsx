@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Link from "@material-ui/core/Link";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import { NavLink } from "react-router-dom";
 
 import "./AppBar.css";
 
@@ -21,25 +22,25 @@ export const ProminentAppBar: React.FC = () => {
       <div className="toolbar_navigation-items">
         <ul>
           <li>
-            <Link href="/">Shop Collection</Link>
+            <NavLink to="/shop-collection">Shop Collection</NavLink>
           </li>
           <li>
-            <Link href="/">Mothers's Day</Link>
+            <NavLink to="/mother">Mother's Day</NavLink>
           </li>
           <li>
-            <Link href="/">Shop Occasion</Link>
+            <NavLink to="/shop-occasion">Shop Occasion</NavLink>
           </li>
           <li>
-            <Link href="/">Events</Link>
+            <NavLink to="/events">Events</NavLink>
           </li>
           <li>
-            <Link href="/">About Us</Link>
+            <NavLink to="/about-us">About Us</NavLink>
           </li>
           <li>
-            <Link href="/">Blog</Link>
+            <NavLink to="/blog">Blog</NavLink>
           </li>
           <li>
-            <Link href="/">Franchies</Link>
+            <NavLink to="/franchies">Franchies</NavLink>
           </li>
         </ul>
       </div>
@@ -47,7 +48,7 @@ export const ProminentAppBar: React.FC = () => {
       <div className="toolbar_navigation-items">
         <ul>
           <li>
-            <Link href="/">Call us!973-450-8200</Link>
+            <NavLink to="/call">Call us! 973-450-8200</NavLink>
           </li>
           <li>
             <Button>

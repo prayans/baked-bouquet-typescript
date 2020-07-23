@@ -55,7 +55,7 @@ export const Segment: React.FC = () => {
           {["Events", "About Us", "Blog", "Franchies"].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>
-                {index == 1 ? <InfoIcon /> : undefined}
+                {index === 1 ? <InfoIcon /> : undefined}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>

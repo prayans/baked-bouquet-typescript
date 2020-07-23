@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export const NevBar: React.FC = () => {
+export const NavigationBar: React.FC = () => {
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -62,7 +62,7 @@ export const NevBar: React.FC = () => {
           >
             <MenuIcon />
           </IconButton>
-          {mobileOpen == false ? <ProminentAppBar /> : undefined}
+          {mobileOpen === false ? <ProminentAppBar /> : undefined}
         </Toolbar>
       </AppBar>
       <nav aria-label="mailbox folders">
@@ -84,11 +84,11 @@ export const NevBar: React.FC = () => {
           </Drawer>
         </Hidden>
       </nav>
-      <main className={classes.content}>
+      {/* <main className={classes.content}>
         <div className={classes.toolbar} />
         <Typography paragraph>Content 1</Typography>
         <Typography paragraph>Content 2</Typography>
-      </main>
+      </main> */}
     </div>
   );
 };
