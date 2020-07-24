@@ -9,7 +9,7 @@ import Typography from "@material-ui/core/Typography";
 import { ProminentAppBar } from "./AppBar";
 import { Segment } from "./Drawer";
 import Drawer from "@material-ui/core/Drawer";
-import "./AppBar.css";
+import "../css/AppBar.css";
 
 import {
   makeStyles,

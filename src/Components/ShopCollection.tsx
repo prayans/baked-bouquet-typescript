@@ -1,24 +1,33 @@
 import React, { useState, useEffect } from "react";
-import { Component } from "react";
 import axios from "axios";
-import { NavigationBar } from "./NavigationBar";
+import { NavigationBar } from "./Navigation/NavigationBar";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import Button from "@material-ui/core/Button";
 
-import "./AppBar.css";
-import "./ShopCollection.css";
-export default () => {
+import "./css/AppBar.css";
+import "./css/ShopCollection.css";
+
+interface ShopCollectionProps {
+  url: string;
+}
+
+export const ShopCollection: React.FC<ShopCollectionProps> = ({ url }) => {
   const [Collections, setCollections] = useState([]);
   useEffect(() => {
+    fetchitems();
+  }, []);
+
+  const fetchitems = async () => {
     axios({
       method: "GET",
-      url: `https://bb-api.mithyalabs.com/api/categories`,
+      url: `${url}`,
     }).then((res) => {
+      console.log(res);
       setCollections(res.data);
     });
-  });
+  };
   return (
     <React.Fragment>
       <NavigationBar />
@@ -26,7 +35,7 @@ export default () => {
         <div className="grid">
           {Collections.map((Collection: any) => {
             return (
-              <Card className="card product-item">
+              <Card key={Collection.name} className="card product-item">
                 <CardActionArea>
                   <div className="card__image">
                     <img src={Collection._cover.url} alt={Collection.name} />
@@ -36,8 +45,8 @@ export default () => {
                     Starting at ${Collection.startingPrice}
                   </h2>
                 </CardActionArea>
-                <CardActions>
-                  <Button className="btn" variant="contained" color="primary">
+                <CardActions style={{ justifyContent: "center" }}>
+                  <Button variant="contained" color="primary">
                     Order Now!
                   </Button>
                 </CardActions>

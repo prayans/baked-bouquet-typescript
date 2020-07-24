@@ -3,9 +3,8 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Link from "@material-ui/core/Link";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { NavLink } from "react-router-dom";
 
-import "./AppBar.css";
+import "../css/AppBar.css";
 
 export const ProminentAppBar: React.FC = () => {
   return (
@@ -22,25 +21,25 @@ export const ProminentAppBar: React.FC = () => {
       <div className="toolbar_navigation-items">
         <ul>
           <li>
-            <NavLink to="/shop-collection">Shop Collection</NavLink>
+            <Link href="/shop-collection">Shop Collection</Link>
           </li>
           <li>
-            <NavLink to="/mother">Mother's Day</NavLink>
+            <Link href="/mothers-day">Mother's Day</Link>
           </li>
           <li>
-            <NavLink to="/shop-occasion">Shop Occasion</NavLink>
+            <Link href="/shop-occasion">Shop Occasion</Link>
           </li>
           <li>
-            <NavLink to="/events">Events</NavLink>
+            <Link href="/events">Events</Link>
           </li>
           <li>
-            <NavLink to="/about-us">About Us</NavLink>
+            <Link href="/about-us">About Us</Link>
           </li>
           <li>
-            <NavLink to="/blog">Blog</NavLink>
+            <Link href="/blog">Blog</Link>
           </li>
           <li>
-            <NavLink to="/franchies">Franchies</NavLink>
+            <Link href="/franchies">Franchies</Link>
           </li>
         </ul>
       </div>
@@ -48,7 +47,7 @@ export const ProminentAppBar: React.FC = () => {
       <div className="toolbar_navigation-items">
         <ul>
           <li>
-            <NavLink to="/call">Call us! 973-450-8200</NavLink>
+            <Link href="/call">Call us! 973-450-8200</Link>
           </li>
           <li>
             <Button>
