@@ -21,7 +21,7 @@ export const ProminentAppBar: React.FC = () => {
       <div className="toolbar_navigation-items">
         <ul>
           <li>
-            <Link href="/shop-collection">Shop Collection</Link>
+            <Link href="/shop-collection/categories">Shop Collection</Link>
           </li>
           <li>
             <Link href="/mothers-day">Mother's Day</Link>

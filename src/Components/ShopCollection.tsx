@@ -5,32 +5,52 @@ import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import Button from "@material-ui/core/Button";
+import getAllCollections from "./ShopCollectionsServiceWorkers";
+import http from "./http-common";
 
 import "./css/AppBar.css";
 import "./css/ShopCollection.css";
 
 interface ShopCollectionProps {
-  url: string;
+  match: any;
+  location: any;
 }
 
-export const ShopCollection: React.FC<ShopCollectionProps> = ({ url }) => {
+export const ShopCollection: React.FC<ShopCollectionProps> = ({
+  match,
+  location,
+}) => {
   const [Collections, setCollections] = useState([]);
+  console.log(match);
+  console.log(location);
+
+  // useEffect(() => {
+  //   fetchitems();
+  // }, []);
+
+  // const fetchitems = async () => {
+  //   axios({
+  //     method: "GET",
+  //     url: `${url}`,
+  //   }).then((res) => {
+  //     console.log(res);
+  //     setCollections(res.data);
+  //   });
+  // };
+  let name = match.params.name + location.search;
+  console.log(name);
   useEffect(() => {
-    fetchitems();
+    http
+      .get(match.params.name + location.search)
+      .then((res) => {
+        console.log(res);
+        setCollections(res.data);
+      })
+      .catch((err) => console.log(err));
   }, []);
 
-  const fetchitems = async () => {
-    axios({
-      method: "GET",
-      url: `${url}`,
-    }).then((res) => {
-      console.log(res);
-      setCollections(res.data);
-    });
-  };
   return (
     <React.Fragment>
-      <NavigationBar />
       <div className="main">
         <div className="grid">
           {Collections.map((Collection: any) => {

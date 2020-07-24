@@ -6,7 +6,7 @@ const about: React.FC = () => {
     <React.Fragment>
       <NavigationBar />
       <div className="main">
-        <div>About Us</div>;
+        <div>About-Us</div>;
       </div>
     </React.Fragment>
   );

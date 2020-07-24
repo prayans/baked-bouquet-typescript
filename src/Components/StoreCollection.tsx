@@ -6,12 +6,56 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import "./css/AppBar.css";
 import "./css/ShopCollection.css";
 
+interface IStores {
+  name: string;
+  contact: string;
+  email: string;
+  address1: string;
+  address2: string;
+  zipcode: string;
+  state: string;
+  city: string;
+  location: {
+    lat: number;
+    lng: number;
+  };
+  tax: 0;
+  auth_net_settings: {
+    api_key: string;
+    transaction_key: string;
+  };
+  hana_pos_settings: {
+    username: string;
+    password: string;
+    storeMatch: string;
+  };
+  store_hours: {
+    mon_fri: string;
+    sat: string;
+    sun: string;
+    special: string;
+  };
+  isShipping: boolean;
+  created: string;
+  updated: string;
+  id: string;
+  managerId: string;
+  userId: string;
+  _cover: {
+    url: string;
+    created: string;
+    updated: string;
+    id: string;
+  };
+  cardOpen: boolean;
+}
+
 interface StoreProps {
   url: string;
 }
 
-export const Store: React.FC<StoreProps> = ({ url }) => {
-  const [Stores, setStores] = useState([]);
+const Stores: React.FC<StoreProps> = ({ url }) => {
+  const [Stores, setStores] = useState<IStores[]>([]);
   useEffect(() => {
     fetchitems();
   }, []);
@@ -55,3 +99,5 @@ export const Store: React.FC<StoreProps> = ({ url }) => {
     </React.Fragment>
   );
 };
+
+export default Stores;
